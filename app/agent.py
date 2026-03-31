@@ -1,12 +1,11 @@
-from google.cloud import aiplatform
+import vertexai
+from vertexai.generative_models import GenerativeModel
 
-# Initialize Vertex AI
-aiplatform.init(project="genai-agent-apac", location="us-central1")
+vertexai.init(project="genai-agent-apac", location="us-central1")
 
 class SummarizerAgent:
     def __init__(self):
-        # Load Gemini model
-        self.model = aiplatform.GenerativeModel("gemini-1.0-pro")
+        self.model = GenerativeModel("gemini-2.5-flash")
 
     def run(self, text: str) -> str:
         response = self.model.generate_content(f"Summarize this: {text}")

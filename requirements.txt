@@ -1,4 +1,4 @@
-fastapi
-uvicorn
-google-cloud-aiplatform
-pytest
+fastapi==0.110.0
+uvicorn==0.29.0
+google-cloud-aiplatform==1.143.0
+pytest==8.1.1
